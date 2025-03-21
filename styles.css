@@ -1,0 +1,55 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.sentiment-chart {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.sentiment-chart div {
+    position: absolute;
+    bottom: 0;
+}
+
+.sentiment-chart .positive {
+    background-color: green;
+}
+
+.sentiment-chart .neutral {
+    background-color: gray;
+}
+
+.sentiment-chart .negative {
+    background-color: red;
+}
+
+.latest-analyses {
+    margin-top: 20px;
+}
+
+.latest-analyses table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.latest-analyses th, .latest-analyses td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.latest-analyses .positive {
+    color: green;
+}
+
+.latest-analyses .neutral {
+    color: gray;
+}
+
+.latest-analyses .negative {
+    color: red;
+}
