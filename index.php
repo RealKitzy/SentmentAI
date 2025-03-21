@@ -29,7 +29,7 @@
                 <th>Feedback</th>
             </tr>
             <?php
-            session_start(); // Inicia a sessão
+            session_start();
 
             if (!isset($_SESSION['latestAnalyses'])) {
                 $_SESSION['latestAnalyses'] = $latestAnalyses;
@@ -75,13 +75,11 @@
         $message = $_POST['message'];
         $sentiment = simulateSentimentAnalysis($message);
 
-        // Adiciona a mensagem ao chat
         if (!isset($_SESSION['chatMessages'])) {
             $_SESSION['chatMessages'] = [];
         }
         $_SESSION['chatMessages'][] = ['text' => $message, 'sentiment' => $sentiment];
 
-        // Adiciona a análise às últimas análises
         if (!isset($_SESSION['latestAnalyses'])) {
             $_SESSION['latestAnalyses'] = $latestAnalyses;
         }
@@ -91,25 +89,16 @@
     }
 
     if (isset($_POST['clearHistory'])) {
-        // Limpa o histórico do chat
         unset($_SESSION['chatMessages']);
-
-        // Limpa o histórico das últimas análises
         unset($_SESSION['latestAnalyses']);
     }
 
     if (isset($_POST['feedback'])) {
         $feedbackIndex = $_POST['feedbackIndex'];
         $feedback = $_POST['feedback'];
-
-        // Simula o aprendizado ajustando as probabilidades de classificação
-        // (Isso é uma simplificação; um sistema real usaria aprendizado de máquina)
         if ($feedback === 'positivo') {
-            // Aumenta a probabilidade do sentimento correto
-            // (Você precisaria implementar uma lógica mais complexa aqui)
+            // Preico diminuir o erro, colocando algo mais complexo pra analisar por favor não mexam nessa parte
         } else if ($feedback === 'negativo') {
-            // Diminui a probabilidade do sentimento incorreto
-            // (Você precisaria implementar uma lógica mais complexa aqui)
         }
     }
 
